@@ -106,10 +106,10 @@ class Main(QMainWindow, Ui_MainWindow):
             cv2.waitKey(1)
         pass
     def AI_assistant(self):
-        pass
+        webbrowser.open("greenshield.streamlit.app")
 
     def AQI_india(self):
-        pass
+        webbrowser.open("https://www.aqi.in/air-quality-map")
 
     def Website(self):
         pass
