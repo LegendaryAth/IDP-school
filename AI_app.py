@@ -102,7 +102,7 @@ footer a:hover {
 """
 
 html = """
-<h1>Environmental AI Assistant</h1>
+<h1>GreenShield AI Assistant</h1>
 <p>Ask me anything about environmentalism!</p>
 """
 
