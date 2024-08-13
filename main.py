@@ -104,7 +104,7 @@ class Main(QMainWindow, Ui_MainWindow):
             #cv2.imshow("Image", img)
             cv2.imshow("GreenSort: Your Personal Waste Segregation Assistant", bg)
             cv2.waitKey(1)
-        pass
+        
     def AI_assistant(self):
         webbrowser.open("greenshield.streamlit.app")
 
@@ -112,7 +112,7 @@ class Main(QMainWindow, Ui_MainWindow):
         webbrowser.open("https://www.aqi.in/air-quality-map")
 
     def Website(self):
-        pass
+        webbrowser.open("http://127.0.0.1:5500/index.html")
 
 app = QApplication(sys.argv)
 oh_god_im_done = Main()

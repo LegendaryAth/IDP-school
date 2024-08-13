@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWorld: The Environmental Steward</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>EcoWorld: The Environmental Steward</h1>
+        <div class="scoreboard">
+            <p>Score: <span id="score">0</span></p>
+            <p>Air Quality: <span id="airQuality">Good</span></p>
+            <p>Water Quality: <span id="waterQuality">Good</span></p>
+            <p>Wildlife Diversity: <span id="wildlifeDiversity">High</span></p>
+            <p>Carbon Footprint: <span id="carbonFootprint">Low</span></p>
+            <p>Energy Usage: <span id="energyUsage">Sustainable</span></p>
+            <p>Waste Production: <span id="wasteProduction">Low</span></p>
+        </div>
+    </div>
+
+    <div class="map">
+        <img src="https://geology.com/world/world-map.gif" alt="World Map" usemap="#worldmap" id="worldMap">
+        <map name="worldmap">
+            <area shape="rect" coords="34,44,270,350" alt="North America" data-region="northAmerica">
+            <area shape="rect" coords="290,172,333,250" alt="South America" data-region="southAmerica">
+            <area shape="rect" coords="337,300,440,390" alt="Europe" data-region="europe">
+            <area shape="rect" coords="460,100,610,280" alt="Africa" data-region="africa">
+            <area shape="rect" coords="610,44,800,350" alt="Asia" data-region="asia">
+            <area shape="rect" coords="900,300,1100,480" alt="Australia" data-region="australia">
+            <!-- Add more regions with appropriate coordinates if needed -->
+        </map>
+    </div>
+
+    <div class="control-panel">
+        <h2>Control Panel</h2>
+        <button id="plantTreesBtn">Plant Trees</button>
+        <button id="reducePollutionBtn">Reduce Pollution</button>
+        <button id="adoptRenewablesBtn">Adopt Renewables</button>
+    </div>
+
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-content">
+            <h2>Environmental Quiz</h2>
+            <p id="quizQuestion">Loading question...</p>
+            <div id="quizOptions"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="cfc.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Carbon Footprint Calculator</h1>
+        </header>
+        <main>
+            <form id="calculator-form">
+                <div class="input-group">
+                    <label for="miles">Miles Driven Per Year:</label>
+                    <input type="number" id="miles" name="miles" required>
+                </div>
+                <div class="input-group">
+                    <label for="electricity">Electricity Usage (kWh/year):</label>
+                    <input type="number" id="electricity" name="electricity" required>
+                </div>
+                <div class="input-group">
+                    <label for="gas">Natural Gas Usage (therms/year):</label>
+                    <input type="number" id="gas" name="gas" required>
+                </div>
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="result" class="hidden">
+                <h2>Your Carbon Footprint</h2>
+                <p id="footprint"></p>
+                <p id="feedback"></p>
+            </div>
+            
+        </main>
+        <footer>
+            <p>&copy; 2024 Carbon Footprint Calculator. Made with 💗 By Arav.</p>
+        </footer>
+    </div>
+    <script src="cfc.js"></script>
+</body>
+</html>

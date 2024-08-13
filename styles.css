@@ -1,0 +1,90 @@
+
+/* App tray styling */
+.app-tray {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px; /* Thinner tray */
+    height: 100%;
+    background-color: #333; /* Solid background color */
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Scroll if needed */
+    z-index: 1000; /* Ensure it's above other elements */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.app-tray h2 {
+    padding: 10px;
+    background-color: #444; /* Slightly lighter for heading */
+    margin: 0;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.app img {
+    width: 30px; /* Smaller icons */
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.app img:hover {
+    transform: scale(1.2);
+}
+
+.app span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Main content styling */
+main.content {
+    margin-left: 220px; /* Leave space for the tray */
+    padding: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+#heading {
+    flex: 1;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.button_style {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button_style:hover {
+    background-color: #0056b3;
+}

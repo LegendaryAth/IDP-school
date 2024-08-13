@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Mukta&family=Tilt+Prism&family=Varela+Round&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/we4.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 50px;
+    margin: 180px;
+    margin-left: 500px;
+    text-align: center;
+    font-size: large;
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.hide {
+    display: none;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.start-btn, .next-btn, .restart-btn {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.quiz-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav{
+    font-family: "Exo 2", "serif";
+    font-weight: bolder;
+    font-size:1.7rem;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+nav ul li{
+    padding: 0 12px;
+
+}
+
+.bar{
+    min-height: 70vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    font-family: 'Varela Round', sans-serif;
+    width: 70%;
+    margin: 23px auto;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('bg.jpeg');
+}
+
+#heading{
+    margin-left: 30px;
+    transition: all 0.4s;
+}
+
+#heading:hover{
+    transform: translateY(-5px);
+    font-size: 40px;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.button{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 7px;
+    margin-top: 10px;
+    color: black;
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+    margin-left: 600px;
+    transition: all 0.4s;
+}
+
+.button:hover{
+    transform: translateY(-10px);
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
