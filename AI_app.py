@@ -124,6 +124,6 @@ if user_input:
 
 st.markdown("""
 <footer>
-    &copy; 2024 Environmental AI Assistant | Built with 💚 by Atharva and Arav
+    &copy; 2024 Environmental AI Assistant | Built with 💚 by Atharva.
 </footer>
 """, unsafe_allow_html=True)
