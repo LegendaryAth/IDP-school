@@ -6,21 +6,18 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const resultContainer = document.getElementById('result-container');
 const scoreElement = document.getElementById('score');
+const wrongAnswersElement = document.createElement('div'); // New element to display wrong answers
 
 let shuffledQuestions, currentQuestionIndex;
 let score = 0;
+let wrongAnswers = []; // Array to store wrong answers
 
 const questions = [
-    { question: 'Which bin should you use for plastic bottles?', answers: ['Recycle', 'Compost', 'Trash'], correct: 'Recycle' },
-    { question: 'Where should you dispose of food scraps?', answers: ['Trash', 'Compost', 'Recycle'], correct: 'Compost' },
-    { question: 'Which bin is for paper waste?', answers: ['Trash', 'Recycle', 'Compost'], correct: 'Recycle' },
-    { question: 'Which bin should glass bottles go into?', answers: ['Recycle', 'Trash', 'Compost'], correct: 'Recycle' },
-    { question: 'How should you dispose of hazardous materials?', answers: ['Trash', 'Special Collection', 'Compost'], correct: 'Special Collection' },
-    { question: 'Where do you dispose of electronic waste?', answers: ['Recycle', 'Trash', 'E-Waste Collection'], correct: 'E-Waste Collection' },
-    { question: 'Which bin should metal cans go into?', answers: ['Recycle', 'Compost', 'Trash'], correct: 'Recycle' },
-    { question: 'Where should you throw away broken glass?', answers: ['Trash', 'Recycle', 'Compost'], correct: 'Trash' },
-    { question: 'How should you dispose of used batteries?', answers: ['Trash', 'Recycle', 'Special Collection'], correct: 'Special Collection' },
-    { question: 'Where do you dispose of plastic bags?', answers: ['Recycle', 'Trash', 'Special Collection'], correct: 'Trash' },
+    { question: 'Which of these is the best way to conserve water at home?', answers: ['Taking shorter showers', 'Leaving the tap running', 'Watering the lawn daily'], correct: 'Taking shorter showers' },
+    { question: 'What type of energy is considered renewable?', answers: ['Solar', 'Coal', 'Natural Gas'], correct: 'Solar' },
+    { question: 'Which of these materials is biodegradable?', answers: ['Plastic', 'Glass', 'Paper'], correct: 'Paper' },
+    { question: 'What is the primary cause of global warming?', answers: ['Deforestation', 'Littering', 'Carbon emissions'], correct: 'Carbon emissions' },
+    { question: 'Which method of transportation has the least environmental impact?', answers: ['Driving a car', 'Riding a bike', 'Flying on a plane'], correct: 'Riding a bike' }
 ];
 
 startButton.addEventListener('click', startGame);
@@ -33,9 +30,10 @@ restartButton.addEventListener('click', startGame);
 function startGame() {
     startButton.classList.add('hide');
     resultContainer.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 7);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     score = 0;
+    wrongAnswers = []; // Reset wrong answers array
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 }
@@ -71,6 +69,13 @@ function selectAnswer(e) {
     const correct = selectedButton.dataset.correct;
     if (correct) {
         score++;
+    } else {
+        // Store the question, correct answer, and the user's selected answer
+        wrongAnswers.push({
+            question: shuffledQuestions[currentQuestionIndex].question,
+            correctAnswer: shuffledQuestions[currentQuestionIndex].correct,
+            selectedAnswer: selectedButton.innerText
+        });
     }
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
@@ -100,4 +105,19 @@ function endQuiz() {
     questionContainerElement.classList.add('hide');
     resultContainer.classList.remove('hide');
     scoreElement.innerText = `${score} out of ${shuffledQuestions.length}`;
+
+    // Display wrong answers
+    wrongAnswersElement.innerHTML = '<h3>Incorrect Questions:</h3>';
+    if (wrongAnswers.length > 0) {
+        wrongAnswers.forEach((item, index) => {
+            const wrongAnswerDiv = document.createElement('div');
+            wrongAnswerDiv.innerHTML = `<p><strong>Q${index + 1}:</strong> ${item.question}</p>
+                                        <p><strong>Your answer:</strong> ${item.selectedAnswer}</p>
+                                        <p><strong>Correct answer:</strong> ${item.correctAnswer}</p>`;
+            wrongAnswersElement.appendChild(wrongAnswerDiv);
+        });
+    } else {
+        wrongAnswersElement.innerHTML += '<p>Great job! You got everything correct!</p>';
+    }
+    resultContainer.appendChild(wrongAnswersElement);
 }

@@ -26,9 +26,10 @@ body {
     max-width: 600px;
     padding: 50px;
     margin: 180px;
-    margin-left: 500px;
+    margin-left: 400px;
     text-align: center;
     font-size: large;
+    margin-top: 155px;
 }
 
 .quiz-header {
